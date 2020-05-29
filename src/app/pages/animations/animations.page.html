@@ -1,0 +1,552 @@
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.sidebar.toggleMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Animations</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- ALL Animations UI -->
+
+<ion-content padding>
+    <ion-grid *ngIf="isLoading">
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Attention Seekers</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <div class="flex-scroll">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title><h1 class="animated infinite jello delay-1s">jello</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                 <ion-card-title><h1 class="animated infinite bounce delay-1s">bounce</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                 <ion-card-title><h1 class="animated infinite flash delay-1s">flash</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                 <ion-card-title><h1 class="animated infinite pulse delay-1s">pulse</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title><h1 class="animated infinite rubberBand delay-1s">rubberBand</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title><h1 class="animated infinite shake delay-1s">shake</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title><h1 class="animated infinite headShake delay-1s">headShake</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title><h1 class="animated infinite swing delay-1s">swing</h1></ion-card-title>
+                </ion-card-header>
+              </ion-card>
+              <ion-card>
+                  <ion-card-header>
+                    <ion-card-title><h1 class="animated infinite tada delay-1s">tada</h1></ion-card-title>
+                  </ion-card-header>
+              </ion-card>
+              <ion-card>
+                  <ion-card-header>
+                    <ion-card-title><h1 class="animated infinite wobble delay-1s">wobble</h1></ion-card-title>
+                  </ion-card-header>
+              </ion-card>
+            
+              </div>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Bouncing Entrances</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+              <div class="flex-scroll">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title><h1 class="animated infinite bounceIn delay-1s">bounceIn</h1></ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                <ion-card>
+                  <ion-card-header>
+                   <ion-card-title><h1 class="animated infinite bounceInDown delay-1s">bounceInDown</h1></ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                <ion-card>
+                  <ion-card-header>
+                   <ion-card-title><h1 class="animated infinite bounceInLeft delay-1s">bounceInLeft</h1></ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                <ion-card>
+                  <ion-card-header>
+                   <ion-card-title><h1 class="animated infinite bounceInRight delay-1s">bounceInRight</h1></ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title><h1 class="animated infinite bounceInUp delay-1s">bounceInUp</h1></ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+                </div>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Bouncing Exits </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <div class="flex-scroll">
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-title><h1 class="animated infinite bounceOut delay-1s">bounceOut</h1></ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                  <ion-card>
+                    <ion-card-header>
+                     <ion-card-title><h1 class="animated infinite bounceOutDown delay-1s">bounceOutDown</h1></ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                  <ion-card>
+                    <ion-card-header>
+                     <ion-card-title><h1 class="animated infinite bounceOutLeft delay-1s">bounceOutLeft</h1></ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                  <ion-card>
+                    <ion-card-header>
+                     <ion-card-title><h1 class="animated infinite bounceOutRight delay-1s">bounceOutRight</h1></ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-title><h1 class="animated infinite bounceOutUp delay-1s">bounceOutUp</h1></ion-card-title>
+                    </ion-card-header>
+                  </ion-card>
+                  </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>Fading Entrances</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                  <div class="flex-scroll">
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title><h1 class="animated infinite fadeIn delay-1s">fadeIn</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                       <ion-card-title><h1 class="animated infinite fadeInDown delay-1s">fadeInDown</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                       <ion-card-title><h1 class="animated infinite fadeInDownBig delay-1s">fadeInDownBig</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                       <ion-card-title><h1 class="animated infinite fadeInLeft delay-1s">fadeInLeft</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title><h1 class="animated infinite fadeInLeftBig delay-1s">fadeInLeftBig</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title><h1 class="animated infinite fadeInRight delay-1s">fadeInRight</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title><h1 class="animated infinite fadeInRightBig delay-1s">fadeInRightBig</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title><h1 class="animated infinite fadeInUp delay-1s">fadeInUp</h1></ion-card-title>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeInUpBig delay-1s">fadeInUpBig</h1></ion-card-title>
+                        </ion-card-header>
+                    </ion-card>
+                    </div>
+              </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Fading Exits</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <div class="flex-scroll">
+                      <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeOut delay-1s">fadeOut</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                         <ion-card-title><h1 class="animated infinite fadeOutDown delay-1s">fadeOutDown</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                         <ion-card-title><h1 class="animated infinite fadeOutDownBig delay-1s">fadeOutDownBig</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                         <ion-card-title><h1 class="animated infinite fadeOutLeft delay-1s">fadeOutLeft</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeOutLeftBig delay-1s">fadeOutLeftBig</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeOutRight delay-1s">fadeOutRight</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeOutRightBig delay-1s">fadeOutRightBig</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                        <ion-card-header>
+                          <ion-card-title><h1 class="animated infinite fadeOutUp delay-1s">fadeOutUp</h1></ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                      <ion-card>
+                          <ion-card-header>
+                            <ion-card-title><h1 class="animated infinite fadeInUpBig delay-1s">fadeOutUpBig</h1></ion-card-title>
+                          </ion-card-header>
+                      </ion-card>
+                      </div>
+                </ion-card-content>
+              </ion-card>
+
+
+              <ion-card>
+                  <ion-card-header>
+                    <ion-card-subtitle>Flippers</ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <div class="flex-scroll">
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-title><h1 class="animated infinite flip delay-1s">flip</h1></ion-card-title>
+                          </ion-card-header>
+                        </ion-card>
+                        <ion-card>
+                          <ion-card-header>
+                           <ion-card-title><h1 class="animated infinite flipInX delay-1s">flipInX</h1></ion-card-title>
+                          </ion-card-header>
+                        </ion-card>
+                        <ion-card>
+                          <ion-card-header>
+                           <ion-card-title><h1 class="animated infinite flipInY delay-1s">flipInY</h1></ion-card-title>
+                          </ion-card-header>
+                        </ion-card>
+                        <ion-card>
+                          <ion-card-header>
+                           <ion-card-title><h1 class="animated infinite flipOutX delay-1s">flipOutX</h1></ion-card-title>
+                          </ion-card-header>
+                        </ion-card>
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-title><h1 class="animated infinite flipOutY delay-1s">flipOutY</h1></ion-card-title>
+                          </ion-card-header>
+                        </ion-card>
+                        </div>
+                  </ion-card-content>
+                </ion-card>
+
+                <ion-card>
+                    <ion-card-header>
+                      <ion-card-subtitle>Lightspeed</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div class="flex-scroll">
+                          <ion-card>
+                            <ion-card-header>
+                              <ion-card-title><h1 class="animated infinite lightSpeedIn delay-1s">lightSpeedIn</h1></ion-card-title>
+                            </ion-card-header>
+                          </ion-card>
+                          <ion-card>
+                            <ion-card-header>
+                             <ion-card-title><h1 class="animated infinite lightSpeedOut delay-1s">lightSpeedOut</h1></ion-card-title>
+                            </ion-card-header>
+                          </ion-card>
+                          </div>
+                    </ion-card-content>
+                  </ion-card>    
+                  
+
+                  <ion-card>
+                      <ion-card-header>
+                        <ion-card-subtitle>Rotating Entrances</ion-card-subtitle>
+                      </ion-card-header>
+                      <ion-card-content>
+                          <div class="flex-scroll">
+                            <ion-card>
+                              <ion-card-header>
+                                <ion-card-title><h1 class="animated infinite rotateIn delay-1s">rotateIn</h1></ion-card-title>
+                              </ion-card-header>
+                            </ion-card>
+                            <ion-card>
+                              <ion-card-header>
+                               <ion-card-title><h1 class="animated infinite rotateInDownLeft delay-1s">rotateInDownLeft</h1></ion-card-title>
+                              </ion-card-header>
+                            </ion-card>
+                            <ion-card>
+                              <ion-card-header>
+                               <ion-card-title><h1 class="animated infinite rotateInDownRight delay-1s">rotateInDownRight</h1></ion-card-title>
+                              </ion-card-header>
+                            </ion-card>
+                            <ion-card>
+                              <ion-card-header>
+                               <ion-card-title><h1 class="animated infinite rotateInUpLeft delay-1s">rotateInUpLeft</h1></ion-card-title>
+                              </ion-card-header>
+                            </ion-card>
+                            <ion-card>
+                              <ion-card-header>
+                                <ion-card-title><h1 class="animated infinite rotateInUpRight delay-1s">rotateInUpRight</h1></ion-card-title>
+                              </ion-card-header>
+                            </ion-card>
+                            </div>
+                      </ion-card-content>
+                    </ion-card>
+
+
+                    <ion-card>
+                        <ion-card-header>
+                          <ion-card-subtitle>Rotating Exits</ion-card-subtitle>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <div class="flex-scroll">
+                              <ion-card>
+                                <ion-card-header>
+                                  <ion-card-title><h1 class="animated infinite rotateOut delay-1s">rotateOut</h1></ion-card-title>
+                                </ion-card-header>
+                              </ion-card>
+                              <ion-card>
+                                <ion-card-header>
+                                 <ion-card-title><h1 class="animated infinite rotateOutDownLeft delay-1s">rotateOutDownLeft</h1></ion-card-title>
+                                </ion-card-header>
+                              </ion-card>
+                              <ion-card>
+                                <ion-card-header>
+                                 <ion-card-title><h1 class="animated infinite rotateOutDownRight delay-1s">rotateOutDownRight</h1></ion-card-title>
+                                </ion-card-header>
+                              </ion-card>
+                              <ion-card>
+                                <ion-card-header>
+                                 <ion-card-title><h1 class="animated infinite rotateOutUpLeft delay-1s">rotateOutUpLeft</h1></ion-card-title>
+                                </ion-card-header>
+                              </ion-card>
+                              <ion-card>
+                                <ion-card-header>
+                                  <ion-card-title><h1 class="animated infinite rotateOutUpRight delay-1s">rotateOutUpRight</h1></ion-card-title>
+                                </ion-card-header>
+                              </ion-card>
+                              </div>
+                        </ion-card-content>
+                      </ion-card>
+
+
+                      <ion-card>
+                          <ion-card-header>
+                            <ion-card-subtitle>Sliding Entrances</ion-card-subtitle>
+                          </ion-card-header>
+                          <ion-card-content>
+                              <div class="flex-scroll">
+                                <ion-card>
+                                  <ion-card-header>
+                                    <ion-card-title><h1 class="animated infinite slideInDown delay-1s">slideInDown</h1></ion-card-title>
+                                  </ion-card-header>
+                                </ion-card>
+                                <ion-card>
+                                  <ion-card-header>
+                                   <ion-card-title><h1 class="animated infinite slideInLeft delay-1s">slideInLeft</h1></ion-card-title>
+                                  </ion-card-header>
+                                </ion-card>
+                                <ion-card>
+                                  <ion-card-header>
+                                   <ion-card-title><h1 class="animated infinite slideInRight delay-1s">slideInRight</h1></ion-card-title>
+                                  </ion-card-header>
+                                </ion-card>
+                                <ion-card>
+                                  <ion-card-header>
+                                   <ion-card-title><h1 class="animated infinite slideInUp delay-1s">slideInUp</h1></ion-card-title>
+                                  </ion-card-header>
+                                </ion-card>
+                                </div>
+                          </ion-card-content>
+                        </ion-card>
+
+
+                        <ion-card>
+                            <ion-card-header>
+                              <ion-card-subtitle>Sliding Exits</ion-card-subtitle>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <div class="flex-scroll">
+                                  <ion-card>
+                                    <ion-card-header>
+                                      <ion-card-title><h1 class="animated infinite slideOutDown delay-1s">slideOutDown</h1></ion-card-title>
+                                    </ion-card-header>
+                                  </ion-card>
+                                  <ion-card>
+                                    <ion-card-header>
+                                     <ion-card-title><h1 class="animated infinite slideOutLeft delay-1s">slideOutLeft</h1></ion-card-title>
+                                    </ion-card-header>
+                                  </ion-card>
+                                  <ion-card>
+                                    <ion-card-header>
+                                     <ion-card-title><h1 class="animated infinite slideOutRight delay-1s">slideOutRight</h1></ion-card-title>
+                                    </ion-card-header>
+                                  </ion-card>
+                                  <ion-card>
+                                    <ion-card-header>
+                                     <ion-card-title><h1 class="animated infinite slideOutUp delay-1s">slideOutUp</h1></ion-card-title>
+                                    </ion-card-header>
+                                  </ion-card>
+                                  </div>
+                            </ion-card-content>
+                          </ion-card>
+
+
+                          <ion-card>
+                              <ion-card-header>
+                                <ion-card-subtitle>Zoom Entrances</ion-card-subtitle>
+                              </ion-card-header>
+                              <ion-card-content>
+                                  <div class="flex-scroll">
+                                    <ion-card>
+                                      <ion-card-header>
+                                        <ion-card-title><h1 class="animated infinite zoomIn delay-1s">zoomIn</h1></ion-card-title>
+                                      </ion-card-header>
+                                    </ion-card>
+                                    <ion-card>
+                                      <ion-card-header>
+                                       <ion-card-title><h1 class="animated infinite zoomInDown delay-1s">zoomInDown</h1></ion-card-title>
+                                      </ion-card-header>
+                                    </ion-card>
+                                    <ion-card>
+                                      <ion-card-header>
+                                       <ion-card-title><h1 class="animated infinite zoomInLeft delay-1s">zoomInLeft</h1></ion-card-title>
+                                      </ion-card-header>
+                                    </ion-card>
+                                    <ion-card>
+                                      <ion-card-header>
+                                       <ion-card-title><h1 class="animated infinite zoomInRight delay-1s">zoomInRight</h1></ion-card-title>
+                                      </ion-card-header>
+                                    </ion-card>
+                                    <ion-card>
+                                      <ion-card-header>
+                                        <ion-card-title><h1 class="animated infinite zoomInUp delay-1s">zoomInUp</h1></ion-card-title>
+                                      </ion-card-header>
+                                    </ion-card>
+                                    </div>
+                              </ion-card-content>
+                            </ion-card>
+        
+        
+                            <ion-card>
+                                <ion-card-header>
+                                  <ion-card-subtitle>Zoom Exits</ion-card-subtitle>
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <div class="flex-scroll">
+                                      <ion-card>
+                                        <ion-card-header>
+                                          <ion-card-title><h1 class="animated infinite zoomOut delay-1s">zoomOut</h1></ion-card-title>
+                                        </ion-card-header>
+                                      </ion-card>
+                                      <ion-card>
+                                        <ion-card-header>
+                                         <ion-card-title><h1 class="animated infinite zoomOutDown delay-1s">zoomOutDown</h1></ion-card-title>
+                                        </ion-card-header>
+                                      </ion-card>
+                                      <ion-card>
+                                        <ion-card-header>
+                                         <ion-card-title><h1 class="animated infinite zoomOutLeft delay-1s">zoomOutLeft</h1></ion-card-title>
+                                        </ion-card-header>
+                                      </ion-card>
+                                      <ion-card>
+                                        <ion-card-header>
+                                         <ion-card-title><h1 class="animated infinite zoomOutRight delay-1s">zoomOutRight</h1></ion-card-title>
+                                        </ion-card-header>
+                                      </ion-card>
+                                      <ion-card>
+                                        <ion-card-header>
+                                          <ion-card-title><h1 class="animated infinite zoomOutUp delay-1s">zoomOutUp</h1></ion-card-title>
+                                        </ion-card-header>
+                                      </ion-card>
+                                      </div>
+                                </ion-card-content>
+                              </ion-card>         
+                              
+                              
+                              <ion-card>
+                                  <ion-card-header>
+                                    <ion-card-subtitle>Specials</ion-card-subtitle>
+                                  </ion-card-header>
+                                  <ion-card-content>
+                                      <div class="flex-scroll">
+                                        <ion-card>
+                                          <ion-card-header>
+                                            <ion-card-title><h1 class="animated infinite hinge delay-1s">hinge</h1></ion-card-title>
+                                          </ion-card-header>
+                                        </ion-card>
+                                        <ion-card>
+                                          <ion-card-header>
+                                           <ion-card-title><h1 class="animated infinite jackInTheBox delay-1s">jackInTheBox</h1></ion-card-title>
+                                          </ion-card-header>
+                                        </ion-card>
+                                        <ion-card>
+                                          <ion-card-header>
+                                           <ion-card-title><h1 class="animated infinite rollIn delay-1s">rollIn</h1></ion-card-title>
+                                          </ion-card-header>
+                                        </ion-card>
+                                        <ion-card>
+                                          <ion-card-header>
+                                           <ion-card-title><h1 class="animated infinite rollOut delay-1s">rollOut</h1></ion-card-title>
+                                          </ion-card-header>
+                                        </ion-card>
+                                        </div>
+                                  </ion-card-content>
+                                </ion-card>                              
+                              </ion-grid>
+                            </ion-content>

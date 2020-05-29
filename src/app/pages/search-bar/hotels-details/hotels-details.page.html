@@ -1,0 +1,239 @@
+<ion-header translucent>
+  <ion-toolbar translucent style="--background: #f7d204;">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/hotels/tabs/hotels-list"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ isLoading ? 'Loading...' : place.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen> 
+    <div text-center *ngIf="isLoading">
+        <ion-spinner color="primary"></ion-spinner>
+      </div>
+  
+      <ion-grid no-padding *ngIf="!isLoading">
+          <div *ngIf="place" class="content">
+
+          <div class="movie-header">
+              <div class="movie-backdrop-image">
+                  <img [src]="place.imageUrl"/>
+                </div>
+          
+                <div class="movie-poster">
+                    <img [src]="place.imageUrl"/>
+                  </div>
+        
+              <div class="movie-rating">
+                <span>{{place.avg}}/10</span>
+              </div>
+            </div>
+
+            <div class="movie-info">
+                <ion-row>
+
+                <div class="movie-title">
+                  <span>{{place.title}}
+                    <span class="movie-year">({{place.availableFrom | date: 'yyyy'}})</span>
+                  </span>
+                </div>
+              </ion-row>
+
+
+                <div class="movie-info-type">
+                  <div class="movie-runtime">
+                    <ion-icon name="moon"></ion-icon>
+                    <span>{{place.price}}$ /{{ "hotels-details.night" | translate }}</span>
+                  </div>
+                  <div class="movie-genres">
+                      <span>{{place.star}} {{ "hotels-details.stars" | translate }}&nbsp;</span>
+                    </div>
+                </div>
+
+                <ion-row>
+
+                <div class="movie-user-actions">
+                    <ion-icon name="list" ></ion-icon>
+                    <ion-icon [ngClass]="{'favorited': isFavorite}" name="heart" ></ion-icon>
+                    <ion-icon [ngClass]="{'selected': isOnWatchlist}" name="bookmark" ></ion-icon>
+                    <ion-icon name="share" ></ion-icon>
+                  </div>
+                </ion-row>
+
+              <div class="second-movie-user-actions">
+                  <div class="movie-rate" >
+                      <ion-icon name="star"
+                      *ngFor="let i of [1,2,3,4,5];" 
+                      [ngClass]="{'active': rate >= i}"
+                      ></ion-icon>
+                    </div>
+          
+                  <div class="movie-play">
+                    <ion-icon name="play"></ion-icon>
+                    <span>{{ "hotels-details.see_video" | translate }}</span>
+                  </div>
+                </div>
+
+              <ion-row>
+               <div class="card">
+                <ion-card>
+                  <ion-card-header>
+                      <ion-card-title>
+                          <div class=title>
+                              <span class="text">{{ "hotels-details.overview" | translate }}</span>
+                            </div>
+                      </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      <div class="text">
+                          <p>{{place.description}}</p>
+                        </div>
+                  </ion-card-content>
+                </ion-card>
+               </div>
+                </ion-row>
+
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>
+                            <div class=title>
+                                <ion-icon name="mail-open"></ion-icon>
+                                <span class="text"> {{ "menu.contact" | translate }}</span>
+                              </div>
+                        </ion-card-title>
+                    </ion-card-header>
+                    <fiv-stepper #stepperV [mode]="'horizontal'">
+                      <fiv-step [title]="'hotels-details.mobile_phone'| translate" [subtitle]="'Fix/Portable'">
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-subtitle>{{ "hotels-details.mobile_phone" | translate }}: </ion-card-subtitle>
+                            <ion-card-title> +{{place.mobile}}</ion-card-title>
+                          </ion-card-header>
+                          <ion-card-content>
+                          </ion-card-content>
+                          <ion-toolbar>
+                            <ion-buttons slot="end">
+                              <ion-button color="primary" (click)="stepperV.select(1)">
+                                {{ "hotels-details.next" | translate }}
+                              </ion-button>
+                            </ion-buttons>
+                          </ion-toolbar>
+                        </ion-card>
+                      </fiv-step>
+                      <fiv-step [title]="'hotels-details.adressEmail'| translate" [subtitle]="'@Email'">
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-subtitle>@{{ "hotels-details.adressEmail" | translate }}:</ion-card-subtitle>
+                            <ion-card-title> {{place.email}} </ion-card-title>
+                          </ion-card-header>
+                          <ion-card-content>
+                          </ion-card-content>
+                          <ion-toolbar>
+                            <ion-buttons slot="end">
+                              <ion-button color="dark" (click)="stepperV.select(0)">
+                                {{ "hotels-details.previous" | translate }}
+                              </ion-button>
+                              <ion-button color="primary" (click)="stepperV.select(2)">
+                                {{ "hotels-details.next" | translate }} 
+                              </ion-button>
+                            </ion-buttons>
+                          </ion-toolbar>
+                        </ion-card>
+                      </fiv-step>
+                      <fiv-step [title]="'hotels-details.website'| translate" [subtitle]="'Net'">
+                        <ion-card>
+                          <ion-card-header>
+                            <ion-card-subtitle>{{ "hotels-details.website" | translate }}:</ion-card-subtitle>
+                            <ion-card-title> {{place.Website}} </ion-card-title>
+                          </ion-card-header>
+                          <ion-card-content>
+                          </ion-card-content>
+                          <ion-toolbar>
+                            <ion-buttons slot="end">
+                              <ion-button color="dark" (click)="stepperV.select(1)">
+                                {{ "hotels-details.previous" | translate }} 
+                              </ion-button>
+                              <ion-button color="primary" (click)="stepperV.select(0)">
+                                {{ "hotels-details.next" | translate }} 
+                              </ion-button>
+                            </ion-buttons>
+                          </ion-toolbar>
+                        </ion-card>
+                      </fiv-step>
+                    </fiv-stepper>
+
+                      <ion-card-header>
+                          <ion-card-title>
+                              <div class=title>
+                                  <ion-icon name="locate"></ion-icon>
+                                  <span class="text"> {{ "Add-hotels.location" | translate }} </span>
+                                </div>
+                          </ion-card-title>
+                      </ion-card-header>
+                          <fiv-stepper #stepper [mode]="'horizontal'">
+                              <fiv-step [title]="'hotels-details.adress'| translate" [subtitle]="'street/stat'">
+                                <ion-card class="card-horizontal">
+                                <ion-card-header>
+                                    <ion-card-subtitle>{{ "hotels-details.adress" | translate }}: </ion-card-subtitle>
+                                    <ion-card-title> {{place.location.address}}</ion-card-title>
+                                </ion-card-header>
+                                <ion-card-content>
+                                </ion-card-content>
+                                <ion-toolbar>
+                                  <ion-buttons slot="end">
+                                    <ion-button color="primary" (click)="stepper.select(1)">
+                                      {{ "hotels-details.next" | translate }} 
+                                    </ion-button>
+                                  </ion-buttons>
+                                </ion-toolbar>
+                              </ion-card>
+                            </fiv-step>
+                            <fiv-step [title]="'hotels-details.available'| translate" [subtitle]="'From ---> To'">
+                                <ion-card>
+                                <ion-card-header>
+                                    <ion-card-subtitle>{{ "Add-hotels.available-from" | translate }} : </ion-card-subtitle>
+                                    <ion-card-title> {{place.availableFrom}} </ion-card-title>
+                                    <ion-card-subtitle> {{ "Add-hotels.available-to" | translate }}  </ion-card-subtitle>
+                                    <ion-card-title> {{place.availableFrom}} </ion-card-title>
+                                </ion-card-header>
+                                <ion-card-content>
+              
+                                </ion-card-content>
+                                <ion-toolbar>
+                                  <ion-buttons slot="end">
+                                    <ion-button color="dark" (click)="stepper.select(0)">
+                                      {{ "hotels-details.previous" | translate }}
+                                    </ion-button>
+                                    <ion-button color="primary" (click)="stepper.select(2)">
+                                      {{ "hotels-details.next" | translate }} 
+                                    </ion-button>
+                                  </ion-buttons>
+                                </ion-toolbar>
+                              </ion-card>
+                            </fiv-step>
+                            <fiv-step [title]="'hotels-details.map'| translate" [subtitle]="'Location'">
+                                <ion-card>
+                                <ion-card-header>
+                                    <ion-card-title> {{ "hotels-details.map" | translate }} </ion-card-title>
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <ion-img role="button" (click)="onShowFullMap()" class="location-image" [src]="place.location.staticMapImageUrl"></ion-img>
+                                </ion-card-content>
+                                <ion-toolbar>
+                                  <ion-buttons slot="end">
+                                    <ion-button color="dark" (click)="stepper.select(1)">
+                                      {{ "hotels-details.previous" | translate }}
+                                    </ion-button>
+                                    <ion-button color="primary" (click)="stepper.select(0)">
+                                      {{ "hotels-details.next" | translate }} 
+                                    </ion-button>
+                                  </ion-buttons>
+                                </ion-toolbar>
+                              </ion-card>
+                            </fiv-step>
+                          </fiv-stepper>
+                  </ion-card>
+                </div>
+            </div>
+        </ion-grid>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.sidebar.toggleMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title> {{ "menu.lang" | translate }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-img src="https://www.padworth.com/wp-content/uploads/2018/02/beeplugin_languages.png"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ "lang.title" | translate }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="full" color="primary" (click)="chooseLang()">
+              <ion-icon name="globe"></ion-icon> 
+              {{ "lang.change" | translate }}</ion-button>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

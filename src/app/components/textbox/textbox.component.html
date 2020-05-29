@@ -1,0 +1,18 @@
+<label>
+    <div class="textbox"
+      [formGroup]="this.parentFormGroup">
+      <ion-icon class="textbox__icon"
+        [name]="this.icon"></ion-icon>
+      <input #input
+        class="textbox__input"
+        [formControlName]="this.textboxFormControlName"
+        [type]="this.type"
+        [placeholder]="this.placeholder"
+        spellcheck="false">
+      <ion-icon *ngIf="this.passToggle === true && input.value.length > 0"
+        (click)="onTogglePassword()"
+        class="textbox__toggle-password"
+        [name]="this.textboxPassToggleIcon"></ion-icon>
+    </div>
+  </label>
+  

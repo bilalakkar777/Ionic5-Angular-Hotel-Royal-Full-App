@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ selectedPlace.title }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center padding>
+  <form (ngSubmit)="onBookPlace()" #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ "hotels-details.fist_name" | translate }}</ion-label>
+            <ion-input
+              type="text"
+              ngModel
+              name="first-name"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ "hotels-details.last_name" | translate }}</ion-label>
+            <ion-input
+              type="text"
+              ngModel
+              name="last-name"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ "hotels-details.nb_guests" | translate }}</ion-label>
+            <ion-select [ngModel]="'2'" name="guest-number">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="3" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ "hotels-details.from" | translate }}</ion-label>
+            <ion-datetime
+              display-format="MMM DD YYYY"
+              picker-format="YY MMM DD"
+              [min]="selectedPlace.availableFrom.toISOString()"
+              [max]="selectedPlace.availableTo.toISOString()"
+              [ngModel]="startDate"
+              name="date-from"
+              required
+              #startDateCtrl="ngModel"
+            ></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="3">
+          <ion-item>
+            <ion-label position="floating">{{ "hotels-details.to" | translate }}</ion-label>
+            <ion-datetime
+              display-format="MMM DD YYYY"
+              picker-format="YY MMM DD"
+              [min]="startDateCtrl.value"
+              [max]="selectedPlace.availableTo.toISOString()"
+              [ngModel]="endDate"
+              name="date-to"
+              required
+            ></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button
+            type="submit"
+            color="primary"
+            expand="block"
+            [disabled]="!f.valid || !datesValid()"
+          >
+          {{ "hotels-details.book_now" | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

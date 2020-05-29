@@ -1,0 +1,37 @@
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+  }
+   
+  .my-message {
+    background: linear-gradient(rgb(255, 251, 0), #ffd900 20%, #726101);
+    color: #fff;
+  }
+   
+  .other-message {
+    background: linear-gradient(rgb(2, 250, 209), #02e4b3 20%, #013517);
+    color: #fff;
+  }
+   
+  .time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+  }
+   
+  .message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+    background: #fff;
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+   
+  .msg-btn {
+    --padding-start: 0.5em;
+    --padding-end: 0.5em;
+  }

@@ -1,0 +1,22 @@
+ion-card {
+    --color: rgba(24,39,74,1);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgb(248, 248, 248) 100%);
+    border-radius: 20px;
+    padding: 8px 0;
+    text-align: center;
+
+    ion-card-content {
+        h2 {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 12px;
+        }
+    }
+
+}
+
+:host {
+  ion-content {
+      --background: var(--ion-color-light);
+  }
+}

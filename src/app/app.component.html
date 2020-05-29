@@ -1,0 +1,148 @@
+<ion-app >
+	<ion-content>
+		<!-- Sidebar -->
+		<ion-menu
+			menuId="sidebar"
+			side="start"
+			type="overlay"
+			[disabled]="this.isOuterPage()"
+		>
+			<ion-header>
+				<div class="sidebar-header">
+					<div class="sidebar-header__content">
+						<div class="sidebar-header__logo">
+							<div class="sidebar-header__logo-wrapper">
+								<img
+									src="https://www.bdhouse2let.com/public/uploads/customer/picture.png"
+									alt="Society logo"
+								/>
+							</div>
+						</div>
+						<div class="sidebar-header__info" >
+							<h1 class="society-name">Royale</h1>
+							<h3 class="society-email">xxx@xxx.xxx</h3>
+						</div>
+					</div>
+					<div class="sidebar-header__toolbar">
+						<div (click)="onLogout()" class="sidebar-header__toolbar-left">
+							<ion-icon name="log-out"></ion-icon>
+							<span>{{ "menu.logout" | translate }}</span>
+						</div>
+						<div class="sidebar-header__toolbar-right">
+							<ion-icon name="cloud-outline"></ion-icon>
+							<ion-icon (click)="simpleNotif()" name="notifications-outline"></ion-icon>
+						</div>
+					</div>
+				</div>
+			</ion-header>
+			<ion-content>
+				<ion-list>
+					<!-- Accueil -->
+					<ion-item (click)="this.sidebar.closeMenu()" [routerLink]="['/home']">
+						<ion-icon name="md-home"></ion-icon>
+						{{ "menu.accueil" | translate }}
+					</ion-item>
+
+					<!-- Contact -->
+					<ion-item color="light">
+						{{ "menu.hotel" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/add']"
+					>
+						<ion-icon name="add-circle"></ion-icon>
+						{{ "menu.add-hotel" | translate }}
+
+						<!-- Premium alert -->
+						<ion-icon
+							[hidden]="true"
+							color="danger"
+							slot="end"
+							name="md-alert"
+						></ion-icon>
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/hotels/tabs/hotels-list']"
+					>
+						<ion-icon name="bed"></ion-icon>
+						{{ "menu.hotels-list" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/hotels/tabs/bookings']"
+					>
+						<ion-icon name="airplane"></ion-icon>
+						{{ "menu.bookings-list" | translate }}
+					</ion-item>
+					<ion-item
+					(click)="this.sidebar.closeMenu()"
+					[routerLink]="['/search-bar']"
+				>
+					<ion-icon name="search"></ion-icon>
+					{{ "menu.search" | translate }}
+				</ion-item>
+					<!-- Opérations -->
+					<ion-item color="light">
+						{{ "menu.contact" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						routerLink="/chat"
+					>
+						<ion-icon name="chatboxes"></ion-icon>
+						{{ "menu.chat" | translate }}
+					</ion-item>
+					<ion-item color="light">
+						{{ "menu.settings" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/payments']"
+					>
+						<ion-icon name="cash"></ion-icon>
+						{{ "menu.payment" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/admob']"
+					>
+						<ion-icon name="share-alt"></ion-icon>
+						{{ "menu.ads" | translate }} Admob
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/languages']"
+					>
+						<ion-icon name="globe"></ion-icon>
+						{{ "menu.lang" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/gallery']"
+					>
+						<ion-icon name="images"></ion-icon>
+						{{ "menu.gallery" | translate }}
+					</ion-item>
+					<ion-item
+						(click)="this.sidebar.closeMenu()"
+						[routerLink]="['/animations']"
+					>
+						<ion-icon name="rocket"></ion-icon>
+						Animation UI
+					</ion-item>
+					
+					<!-- Produits et services -->
+				</ion-list>
+			</ion-content>
+		</ion-menu>
+
+		<!-- The main content -->
+		<div>
+			<ion-router-outlet #outlet="outlet" main></ion-router-outlet>
+		</div>
+	</ion-content>
+
+	<!-- <app-parametres></app-parametres> -->
+</ion-app>

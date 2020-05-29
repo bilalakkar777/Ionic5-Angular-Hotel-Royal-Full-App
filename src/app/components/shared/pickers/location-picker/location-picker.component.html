@@ -1,0 +1,18 @@
+<div class="picker">
+  <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+  <ion-img
+    role="button"
+    class="location-image"
+    (click)="onPickLocation()"
+    [src]="selectedLocationImage"
+    *ngIf="selectedLocationImage && !isLoading && showPreview"
+  ></ion-img>
+  <ion-button
+    color="primary"
+    (click)="onPickLocation()"
+    *ngIf="(!selectedLocationImage || !showPreview) && !isLoading"
+  >
+    <ion-icon name="map" slot="start"></ion-icon>
+    <ion-label>{{"Add-hotels.location" | translate }}</ion-label>
+  </ion-button>
+</div>

@@ -1,0 +1,104 @@
+:host {
+    ion-content {
+        --background: url("../../../assets/img/backgrounds/gold-shad.jpg");
+        background-size: cover;
+        height: auto;
+        overflow: hidden !important;
+        position: relative;
+    }
+ 
+
+    .logo {
+        height: 15%;
+
+        &__img {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 230px;
+            }
+        }
+    }
+
+    .main {
+        height: 80%;
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 80% !important;
+            margin: 20px auto;
+            padding: 10px 15px;
+            width: 97%;
+            text-align: center;
+
+            &__header {
+                color: #5c5b5b;
+                height: 25%;
+
+                .title {
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin: 0 0 5px 0;
+                    text-align: center;
+                }
+
+                .subtitle {
+                    font-size: 16px;
+                    margin: 10px 0 0 0;
+                }
+            }
+
+            &__content {
+                height: 75% auto;
+                position: relative;
+
+                .textboxes {
+                    margin-top: 30px;
+                }
+
+                .checkbox {
+                    margin: 20px -10px;
+                }
+
+                .action-buttons {
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+
+                    .register-button {
+                        margin: auto;
+                        width: 100%;
+                    }
+                }
+                .password-forgotten {
+                    margin: 0;
+                    text-align: center;
+
+                    a {
+                        color: #ff0000;
+                        cursor: pointer;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .register-button {
+            margin: auto;
+            width: 80%;
+        }
+    }
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+

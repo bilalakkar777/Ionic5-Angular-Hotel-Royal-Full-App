@@ -1,0 +1,99 @@
+<ion-content>
+
+  <ion-grid>
+
+     <!--logo { Hotel Royal }-->
+      <ion-row class="logo">
+        <ion-col class="logo__img">
+          <div class="animated fadeInDown ani-buttons">
+          <img src="assets/icon/hotel-royal.png"
+            alt=" "> 
+          </div>
+        </ion-col>
+       
+      </ion-row>
+  
+             <!-- The main content  {{ Register }}-->
+    <ion-row class="main">
+        <ion-col>
+          <div class="card">
+            <div class="card__header">
+             <div class="animated fadeInUp ani-buttons">
+              <h1 class=title>{{ "register.create" | translate }}</h1>
+                <h3 class=subtitle>{{ "register.create-text" | translate }}</h3>
+             </div>
+            </div>
+  
+            <div class="card__content">
+              <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="loginForm">
+
+                  <!-- app-textbox  {{ component }} -->
+                  <!-- app-checkbox {{ component }} -->
+                  <!-- app-button   {{ component }} -->
+               
+                <div class="textboxes">
+                    <div class="animated fadeInDown ani-buttons">
+                  <app-textbox [parentFormGroup]="loginForm"
+                    [textboxFormControlName]="'email'"
+                    [icon]="'md-mail'"
+                    [type]="'email'"
+                    [placeholder]="'register.email-text'| translate" 
+                    ></app-textbox>
+                  <app-textbox [parentFormGroup]="loginForm"
+                    [textboxFormControlName]="'password'"
+                    [icon]="'key'"
+                    [type]="'password'"
+                    [passToggle]="true"
+                    [placeholder]="'register.password-text'| translate" >
+                  </app-textbox>
+                </div>
+                </div>
+  
+                <div class="checkbox">
+                  <app-checkbox [checkbox-parent-form-group]="loginForm"
+                    [checkbox-parent-form-group-name]="'resterconnecter'"
+                    [checkbox-text]="'register.remember-text'| translate" ></app-checkbox>
+                </div>
+  
+                
+                  <div class="login-button">
+                      <div class="animated fadeInUp ani-buttons">
+                    <app-button (clickEvent)="onSubmit(f)"
+                      [button-text]="'register.register'| translate"
+                      [button-text-color]="'white'"
+                      [button-bg-left-color]="'rgb(236, 239, 241)'"
+                      [button-bg-right-color]="'#000000'"></app-button>
+                      </div>
+                  </div>
+                  
+              </form>
+            </div>
+          </div>
+                      <!-- routerLink To Login Page  {{ /login }} -->
+
+          <div class="register-button">
+            <app-button 
+              [routerLink]="['/login']" 
+              [button-text]="'register.back-to-login'| translate"
+              [button-text-size]="14"
+              [button-text-color]="'white'"
+              [button-bg-left-color]="'#8F3A84'"
+              [button-bg-right-color]="'#FFE7FE'"></app-button>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+
+ 
+    <ion-row class="footer">
+      <ion-col size="8">
+        <p class="footer__copyright">
+          Copyright Hotel Royal {{ this.currentYear }}
+        </p>
+      </ion-col>
+      <ion-col size="4">
+        <p class="footer__version">{{ "login.Version" | translate }}</p>
+      </ion-col>
+    </ion-row>
+</ion-content>

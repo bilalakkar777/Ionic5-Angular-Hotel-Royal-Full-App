@@ -1,0 +1,49 @@
+.textbox {
+  align-items: center;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
+  width: 100%;
+
+  &__icon {
+    color: #999999;
+    font-size: 30px;
+    opacity: 0.8;
+  }
+
+  &__input {
+    border: none;
+    color: #999999;
+    flex-basis: 100%;
+    font-size: 12px;
+    height: 100%;
+    padding-left: 10px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.ng-invalid.ng-dirty {
+      color: rgb(255, 138, 138);
+    }
+  }
+
+  &__toggle-password {
+    cursor: pointer;
+    color: #999999;
+    font-size: 30px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  
+ 
+}

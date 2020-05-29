@@ -1,0 +1,163 @@
+
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button routerLink ="/hotels/tabs/hotels-list">
+          <ion-icon name="backspace"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+        {{ "Add-hotels.add-new-hotel" | translate }}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="Addhotel()">
+          <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card>
+    <form [formGroup]="form">
+      <ion-grid>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.title" | translate }}</ion-label>
+              <ion-input
+                type="text"
+                autocomplete
+                autocorrect
+                formControlName="title"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      <!--  <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">Short Description</ion-label>
+              <ion-textarea rows="3" formControlName="short_description"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row
+        *ngIf="
+          !form.get('short_description').valid && form.get('short_description').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Short Description must be between 1 and 80 characters.</p>
+        </ion-col>
+      </ion-row>-->
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.description" | translate }}</ion-label>
+              <ion-textarea rows="3" formControlName="description"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row
+          *ngIf="
+            !form.get('description').valid && form.get('description').touched
+          "
+        >
+          <ion-col size-sm="6" offset-sm="3">
+            <p>{{ "Add-hotels.description-text" | translate }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.price" | translate }}</ion-label>
+              <ion-input type="number" formControlName="price"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.rate" | translate }}</ion-label>
+              <ion-input type="number" formControlName="avg"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.email" | translate }}</ion-label>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.website" | translate }}</ion-label>
+              <ion-input type="text" formControlName="website"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.mobile" | translate }}</ion-label>
+              <ion-input type="number" formControlName="mobile"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.star" | translate }}</ion-label>
+              <ion-input type="number" formControlName="star"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="3" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.available-from" | translate }}</ion-label>
+              <ion-datetime
+                min="2019-01-01"
+                max="2025-12-31"
+                formControlName="dateFrom"
+              ></ion-datetime>
+            </ion-item>
+          </ion-col>
+          <ion-col size-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{"Add-hotels.available-to" | translate }}</ion-label>
+              <ion-datetime
+                min="2019-01-02"
+                max="2025-12-31"
+                formControlName="dateTo"
+              ></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <app-location-picker
+              [showPreview]="form.get('location').value"
+              (locationPick)="onLocationPicked($event)"
+            ></app-location-picker>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <app-image-picker
+              [showPreview]="form.get('image').value"
+              (imagePick)="onImagePicked($event)"
+            ></app-image-picker>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    </ion-card>
+  </ion-content>
+  
+  

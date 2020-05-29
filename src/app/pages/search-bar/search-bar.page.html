@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar
+    color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink ="/hotels/tabs/hotels-list">
+        <ion-icon name="backspace"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{ "search.title" | translate }}
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar [placeholder]="'search.Search_By_Name'| translate"
+                   animated
+                   (ionChange)="searchuser( $event )">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+<!-- for Skeleton Text  -->
+  <ion-list *ngIf="Hotels.length === 0">
+    <ion-item *ngFor="let i of [1,1,1,1,1,1,1,1]">
+      <ion-label>
+        <ion-skeleton-text width="40%"></ion-skeleton-text>
+        <ion-skeleton-text width="80%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list *ngIf="Hotels.length > 0">
+<!-- filtro pipe to sort a hotel by name-->
+    <ion-item *ngFor="let PPP of Hotels | filtro:textbar">
+      <ion-avatar slot="start">
+        <ion-img [src]="PPP.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h5>{{ PPP.title }}</h5>
+        <p>{{ PPP.price  }} $</p>
+      </ion-label>
+      <ion-button
+      fill="clear"
+      color="primary"
+      [routerLink]="[
+        '/',
+        'search-bar',
+        PPP.id
+      ]"
+    >
+    >> {{ "search.details" | translate }}
+    </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,106 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button
+          [defaultHref]="'/hotels/tabs/hotels-list'"
+        ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Edit Offer</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="onUpdateOffer()" [disabled]="!form?.valid">
+          <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-card>
+    <div *ngIf="isLoading" text-center>
+      <ion-spinner color="primary"></ion-spinner>
+    </div>
+    <form [formGroup]="form" *ngIf="!isLoading">
+      <ion-grid>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.title" | translate }} </ion-label>
+              <ion-input
+                type="text"
+                autocomplete
+                autocorrect
+                formControlName="title"
+              ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.description" | translate }}</ion-label>
+              <ion-textarea rows="3" formControlName="description"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row
+          *ngIf="
+            !form.get('description').valid && form.get('description').touched
+          "
+        >
+          <ion-col size-sm="6" offset-sm="3">
+            <p>{{ "Add-hotels.description-text" | translate }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.price" | translate }}</ion-label>
+              <ion-input type="number" formControlName="price"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.rate" | translate }}</ion-label>
+              <ion-input type="number" formControlName="avg"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.email" | translate }}</ion-label>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.website" | translate }}</ion-label>
+              <ion-input type="text" formControlName="website"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.mobile" | translate }}</ion-label>
+              <ion-input type="number" formControlName="mobile"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3">
+            <ion-item>
+              <ion-label position="floating">{{ "Add-hotels.star" | translate }}</ion-label>
+              <ion-input type="number" formControlName="star"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-card>
+  </ion-content>
+  

@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.sidebar.toggleMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title> {{ "pay.payments" | translate }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-img src="/assets/img/paypal.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>{{ "pay.started" | translate }}</ion-card-subtitle>
+        <ion-card-title>PayPal or VISA/Master Card</ion-card-title>
+        <ion-row>
+          <ion-col>
+            {{ "pay.total" | translate }} :
+          </ion-col>
+          <ion-col>
+            {{currencyIcon}}{{paymentAmount}}
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="full" color="primary" (click)="payWithPaypal()">{{ "pay.pay" | translate }}</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

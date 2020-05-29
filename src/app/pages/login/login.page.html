@@ -1,0 +1,137 @@
+<ion-content>
+
+    <ion-grid>
+
+        <!--logo { Hotel Royal }-->
+        <ion-row class="logo">
+          <ion-col class="logo__img">
+            <div class="animated fadeInDown ani-buttons">
+            <img src="assets/icon/hotel-royal.png"
+              alt=" "> 
+            </div>
+          </ion-col>
+         
+        </ion-row>
+    
+               <!-- The main content  {{ Login }}-->
+      <ion-row class="main">
+          <ion-col>
+            <div class="card">
+              <div class="card__header">
+               <div class="animated fadeInUp ani-buttons">
+                <h1 class=title>{{ "login.identification" | translate }}</h1>
+                <h3 class=subtitle>{{ "login.identification-text" | translate }}</h3>
+               </div>
+              </div>
+    
+              <div class="card__content">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="loginForm">
+                  
+                  <!-- app-textbox {{ component }} -->
+
+                  <div class="textboxes">
+                      <div class="animated fadeInDown ani-buttons">
+                    <app-textbox [parentFormGroup]="loginForm"
+                      [textboxFormControlName]="'email'"
+                      [icon]="'md-mail'"
+                      [type]="'email'"
+                      [placeholder]="'login.email-text'| translate" 
+                      ></app-textbox>
+                    <app-textbox [parentFormGroup]="loginForm"
+                      [textboxFormControlName]="'password'"
+                      [icon]="'key'"
+                      [type]="'password'"
+                      [passToggle]="true"
+                      [placeholder]="'login.password-text'| translate" >
+                    </app-textbox>
+                  </div>
+                  </div>
+
+                      <!-- app-checkbox {{ component }} -->
+
+                  <div class="checkbox">
+                    <app-checkbox [checkbox-parent-form-group]="loginForm"
+                      [checkbox-parent-form-group-name]="'resterconnecter'"
+                      [checkbox-text]="'login.remember-text'| translate"></app-checkbox>
+                  </div>
+    
+                      <!-- app-button {{ component }} -->
+
+                    <div class="login-button">
+                        <div class="animated fadeInUp ani-buttons">
+                      <app-button (clickEvent)="onSubmit(f)"
+                        [button-text]="'login.login'| translate"
+                        [button-text-color]="'white'"
+                        [button-bg-left-color]="'#878300'"
+                        [button-bg-right-color]="'#F9ED00'"></app-button>
+                        </div>
+                    </div>
+
+                    <!-- routerLink To Forgot Pass  {{ /forgot-password }} -->
+
+                    <div class="password-forgotten">
+                      <p>
+                        <a routerLink="/forgot-password">{{ "login.forgot-password" | translate }}</a>
+                      </p>
+                    </div>
+                    
+                </form>
+              </div>
+            </div>
+                    <!-- routerLink To Register Page  {{ /register }} -->
+
+            <div class="register-button">
+              <app-button 
+                [routerLink]="['/register']" 
+                [button-text]="'login.register'| translate"
+                [button-text-size]="14"
+                [button-text-color]="'white'"
+                [button-bg-left-color]="'#698001'"
+                [button-bg-right-color]="'#CCF709'"></app-button>
+            </div>
+          </ion-col>
+        </ion-row>
+          </ion-grid>
+
+      
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+
+
+    <div>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="Primary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="Primary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="Primary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+
+  </div>
+  <ion-row class="footer">
+      <ion-col size="8">
+        <p class="footer__copyright">
+          Copyright Hotel Royal {{ this.currentYear }}
+        </p>
+      </ion-col>
+      <ion-col size="4">
+        <p class="footer__version">{{ "login.Version" | translate }}</p>
+      </ion-col>
+    </ion-row>
+</ion-content>

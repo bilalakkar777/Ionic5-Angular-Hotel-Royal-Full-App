@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.sidebar.toggleMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title> Ionic 4 Admob Free  </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+ 
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="showInterstitial()">Show Interstitial Ad</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="showRewardVideo()">Show Reward Video Ad</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+
+
+</ion-content>

@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-toolbar
+    color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.sidebar.toggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{ "menu.accueil" | translate }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink= "/search-bar" >
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button (click)="chooseLang()" >
+          <ion-icon name="globe"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card [routerLink]="['/search-bar']">
+      <div class="animated flipInX">
+      <ion-img [src]="ImgURL1"></ion-img>
+      <div class="card-title"> {{ "search.title" | translate }} </div>
+      <div class="card-subtitle">{{ "forgot-password.see-more" | translate }}</div>
+      </div>
+    </ion-card>
+
+    <ion-card [routerLink]="['/hotels']">
+      <div class="animated rotateIn">
+      <ion-img [src]="ImgURL2"></ion-img>
+      <div class="card-title"> {{ "menu.hotels-list" | translate }} </div>
+      <div class="card-subtitle">{{ "forgot-password.see-more" | translate }}</div>
+      </div>
+    </ion-card>
+
+    <ion-card [routerLink]="['/hotels/tabs/bookings']">
+      <div class="animated rollIn ">
+      <ion-img [src]="ImgURL3"></ion-img>
+      <div class="card-title"> {{ "menu.bookings-list" | translate }} </div>
+      <div class="card-subtitle">{{ "forgot-password.see-more" | translate }}</div>
+      </div>
+    </ion-card>
+
+    <ion-card [routerLink]="['/admob']">
+      <div class="animated rollIn ">
+      <ion-img [src]="ImgURL4"></ion-img>
+      <div class="card-title"> {{ "menu.ads" | translate }} Admob </div>
+      <div class="card-subtitle">{{ "forgot-password.see-more" | translate }}</div>
+      </div>
+    </ion-card>
+
+</ion-content>
+
+

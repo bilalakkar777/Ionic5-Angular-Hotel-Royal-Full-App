@@ -1,0 +1,20 @@
+<div class="picker">
+  <ion-img
+    role="button"
+    class="image"
+    (click)="onPickImage()"
+    [src]="selectedImage"
+    *ngIf="selectedImage && showPreview"
+  ></ion-img>
+  <ion-button color="primary" (click)="onPickImage()" *ngIf="!selectedImage || !showPreview">
+    <ion-icon name="camera" slot="start"></ion-icon>
+    <ion-label>{{"Add-hotels.image" | translate }}</ion-label>
+  </ion-button>
+</div>
+<input
+  type="file"
+  accept="image/jpeg"
+  *ngIf="usePicker"
+  #filePicker
+  (change)="onFileChosen($event)"
+/>

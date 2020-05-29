@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-toolbar
+      color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.sidebar.toggleMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title> {{ "menu.gallery" | translate }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <!--   FivGalleryModule -->
+    <fiv-gallery ambient="true">
+        <fiv-gallery-toolbar [position]="'top'">
+          <fiv-gallery-toolbar-content></fiv-gallery-toolbar-content>
+        </fiv-gallery-toolbar>
+        <ion-grid fixed no-padding>
+          <ion-row >
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://afar-production.imgix.net/uploads/images/afar_post_headers/images/CMYdpSheBx/original_underwater-THE_20MURAKA-Credit_20Justin_20Nicholas.jpg'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://www.buzzyoo.com/wp-content/uploads/2016/05/Africa-First-Underwater-Hotel.png'">
+                <div [fivCenter]>
+                  <fiv-loading-spinner [circleRadius]="8" [diameter]="20" [strokeWidth]="2"></fiv-loading-spinner>
+                </div>
+              </fiv-gallery-image>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://image.cnbcfm.com/api/v1/image/105375026-1533312029523cmri_usv_corridor.jpg?v=1533312100&w=1400&h=950'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://q-cf.bstatic.com/data/xphoto/1182x887/492/49280407.jpg?size=S'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://www.rd.com/wp-content/uploads/2017/09/11_Underwater-Hotels-Around-the-World-that-Look-Too-Beautiful-to-Be-Real_niyama.jpg'"></fiv-gallery-image>
+            </ion-col>
+          <ion-col size="6">
+            <fiv-gallery-image [src]="'https://static.toiimg.com/photo/69991518.cms'"></fiv-gallery-image>
+          </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://assets3.thrillist.com/v1/image/1136315/size/tmg-article_default_mobile.jpg'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://i.ytimg.com/vi/YsOvO6R1--w/maxresdefault.jpg'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://q-cf.bstatic.com/data/xphoto/1182x887/492/49280418.jpg?size=S'"></fiv-gallery-image>
+            </ion-col>
+            <ion-col size="6">
+              <fiv-gallery-image [src]="'https://www.verdict.co.uk/wp-content/uploads/2017/08/the-floating-seahorse-tzar-edition-full-view2-600x450.jpg'"></fiv-gallery-image>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+        <fiv-gallery-toolbar [position]="'bottom'">
+          <ion-toolbar color="transparent">
+            <ion-title>Hotels Gallery</ion-title>
+    
+          </ion-toolbar>
+        </fiv-gallery-toolbar>
+    
+      </fiv-gallery>
+</ion-content>

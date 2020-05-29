@@ -1,0 +1,15 @@
+<div class="checkbox"
+  [formGroup]="parentFormGroup">
+  <label class="checkbox__wrapper">
+    <div class="checkbox__input">
+      <input #input
+        [formControlName]="formControlName"
+        type="checkbox"
+        checked="true">
+      <div class="checkbox__control"></div>
+    </div>
+    <span class="checkbox__text">
+      {{ this.text }}
+    </span>
+  </label>
+</div>
