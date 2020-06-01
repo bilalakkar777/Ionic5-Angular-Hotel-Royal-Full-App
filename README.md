@@ -92,6 +92,10 @@ All npm :
 	•	 npm install ngx-autosize
 
 	•	 npm install @ionic-native/admob-free
+![UI_2](https://user-images.githubusercontent.com/58993136/83449878-3e6caa00-a44c-11ea-858a-48c891b03379.png)
+![UI_3](https://user-images.githubusercontent.com/58993136/83449896-44fb2180-a44c-11ea-87ac-02112672530f.png)
+![UI_4](https://user-images.githubusercontent.com/58993136/83449898-46c4e500-a44c-11ea-84cf-e06308605e57.png)
+![UI_5](https://user-images.githubusercontent.com/58993136/83449906-49273f00-a44c-11ea-9de3-1ffe110f3e82.png)
 
 
 Please don’t forget to rate our item
