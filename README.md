@@ -91,29 +91,6 @@ All npm :
 	•	 npm install @ionic-native/admob-free
 
 
-APP/Src/pages :
-
-
----> Home,
----> Add Hotel,
----> Search Fro Hotel,
----> Hotel ---> Hotel List ---> Hotels Details,
-           .               ---> Edit Hotel, 
-           .
-           ---> Bookings.  ---> Bookings List,
-                           ---> Remove Booking, 
-                           ---> create Booking, 
----> Images Gallery,
----> Login,
----> Register,
----> Forgot Password,
----> languages,
----> animations,
----> Admob,
----> Payments,
----> chats UI,
-
-
 Please don’t forget to rate our item
 
 Hotel Royal Copyright V 0.0.1
