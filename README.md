@@ -103,6 +103,17 @@ Please don’t forget to rate our item
 Hotel Royal Copyright V 0.0.1
 
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <p style="color: rgb(255, 0, 0); background-color: rgb(255, 255, 255); text-align: center;"><strong><span style="font-size: 60px;">Important</span></strong></p>
+    <p style="text-align: center;"><span style="font-size: 26px;">Use Nodejs v10.16.1</span></p>
+</body>
+
 
 
 
